@@ -1,20 +1,28 @@
 require 'rails_helper'
 
 RSpec.describe Recipe do
-  recipe_hash = 
+  before :each do
+
+  @recipe_hash = { id: nil,
+                  label: 'recipe',
+                  url: 'recipe.com',
+                  image: 'recipe.jpg'
+
+  }
+  @recipe = Recipe.new(@recipe_hash, "Thailand")
+  end
 
   it 'instantiates' do
-    recipe = Recipe.new(recipe_hash)
 
-    expect(weather1).to be_an(Recipe)
+    expect(@recipe).to be_a(Recipe)
   end
 
   it 'has attributes' do
-    recipe = Recipe.new(recipe_hash)
 
-    expect(recipe.name).to eq(recipe_hash[:name])
-    expect(recipe.temperature).to eq(recipe_hash[:temperature])
-    expect(recipe.short_forecast).to eq(recipe_hash[:shortForecast])
-    expect(recipe.detailed_forecast).to eq(recipe_hash[:detailedForecast])
+    expect(@recipe.id).to eq(nil)
+    expect(@recipe.title).to eq(@recipe_hash[:label])
+    expect(@recipe.url).to eq(@recipe_hash[:url])
+    expect(@recipe.country).to eq("Thailand")
+    expect(@recipe.image).to eq(@recipe_hash[:image])
   end
 end

@@ -5,7 +5,6 @@ class RecipeService
       f.params['q'] = search_term
     end
     parse(response)
-    binding.pry 
   end
 
 private
