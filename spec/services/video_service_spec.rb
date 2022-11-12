@@ -5,10 +5,11 @@ RSpec.describe VideoService, :vcr do
     it 'should return videos based on search' do
       videos = VideoService.video_search("Laos")
 
-      expect(videos).to be_a(Hash)
-      expect(videos).to have_key(:items)
-      expect(videos[:items]).to be_an(Array)
-      expect(videos[:items][0]).to have_key(:snippet)
+      expect(videos).to be_an(Array)
+      expect(videos[0]).to have_key(:id)
+      expect(videos[0][:id]).to have_key(:videoId)
+      expect(videos[0]).to have_key(:snippet)
+      expect(videos[0][:snippet]).to have_key(:title)
     end
   end
 end

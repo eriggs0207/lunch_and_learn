@@ -6,7 +6,7 @@ class VideoService
       f.params['channelId'] = 'UCluQ5yInbeAkkeCndNnUhpw'
       f.params['q'] = search_term
     end
-    parse(response)
+    parse(response)[:items]
   end
 
 private
