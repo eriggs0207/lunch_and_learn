@@ -1,8 +1,6 @@
-module Api
-  module V1
-    class RecipesController < ApplicationController
-      def index
-      end
-    end
+class Api::V1::RecipesController < ApplicationController
+
+  def index
+    render json: RecipeSerializer.new(RecipeFacade.recipe_search(params[:country]))
   end
 end
