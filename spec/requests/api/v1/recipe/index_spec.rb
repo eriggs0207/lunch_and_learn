@@ -11,7 +11,6 @@ RSpec.describe 'Recipe API | Index' do
 
       get '/api/v1/recipes', headers: headers, params: country_params
       expect(response).to be_successful
-      # expect(response.status).to eq(200)
       parsed_response = JSON.parse(response.body, symbolize_names: true)
 
       expect(parsed_response[:data]).to be_an(Array)
