@@ -27,7 +27,7 @@ RSpec.describe 'Recipe API | Index' do
       end
     end
 
-    it 'returns an empty array with no country field filled in' do
+    it 'returns an empty array when no country field is filled in' do
 
       country_params = {
         country: ""
