@@ -1,7 +1,7 @@
 class RecipeFacade
 
   def self.recipe_search(search_term)
-    if search_term == 'random'
+    if search_term == 'random_country'
       search_term = CountryService.random_country
     end
     recipe_data = RecipeService.recipe_search(search_term)
