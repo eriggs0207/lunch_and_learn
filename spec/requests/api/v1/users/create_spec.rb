@@ -11,7 +11,7 @@ RSpec.describe 'User API | Create' do
       headers = {"CONTENT_TYPE" => "application/json"}
 
       post '/api/v1/users', headers: headers, params: JSON.generate(user: user_params)
-      expect(response).to have_http_status(201)
+      expect(response).to be_successful
       parsed_response = JSON.parse(response.body, symbolize_names: true)
 
       expect(parsed_response).to be_a(Hash)
