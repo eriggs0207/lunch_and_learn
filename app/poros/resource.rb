@@ -1,15 +1,13 @@
 class Resource
-  attr_reader :country,
-              :title,
-              :youtube_video_id,
-              :alt_tag,
-              :url
+  attr_reader :id,
+              :country,
+              :video,
+              :images
 
-  def initialize(video_data, country, image_data)
-    @country = country
-    @title = video_data[:snippet][:title]
-    @youtube_video_id = video_data[:id][:videoId]
-    @alt_tag = image_data[:alt_description]
-    @url = image_data[:urls][:regular]
+  def initialize(resource_hash)
+    @id = nil
+    @country = resource_hash[:country]
+    @video = resource_hash[:video]
+    @images = resource_hash[:images]
   end
 end
