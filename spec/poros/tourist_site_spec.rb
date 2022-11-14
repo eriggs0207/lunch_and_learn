@@ -3,25 +3,26 @@ require 'rails_helper'
 RSpec.describe TouristSight do
   before :each do
 
-  @site_hash = { id: nil,
-                  name: "Dauderi",
-                  address: "Dauderi, Zāģeru iela 7, Riga, LV-1005, Latvia",
-                  place_id: "51f4ef5ecebf1f3840590677eb3181804c40f00102f901127834070000000092030744617564657269"
-
+  @site_hash = { properties:
+              {
+                name: "Maison de Chateaubriand",
+                formatted: "Maison de Chateaubriand, 87 Rue de Chateaubriand, 92290 Châtenay-Malabry, France",
+                place_id: "1234567890"
+              }
   }
   @site = TouristSight.new(@site_hash)
   end
 
-  xit 'instantiates' do
+  it 'instantiates' do
 
     expect(@site).to be_a(TouristSight)
   end
 
-  xit 'has attributes' do
+  it 'has attributes' do
 
     expect(@site.id).to eq(nil)
-    expect(@site.name).to eq("Dauderi")
-    expect(@site.address).to eq("Dauderi, Zāģeru iela 7, Riga, LV-1005, Latvia")
-    expect(@site.place_id).to eq("51f4ef5ecebf1f3840590677eb3181804c40f00102f901127834070000000092030744617564657269")
+    expect(@site.name).to eq("Maison de Chateaubriand")
+    expect(@site.address).to eq("Maison de Chateaubriand, 87 Rue de Chateaubriand, 92290 Châtenay-Malabry, France")
+    expect(@site.place_id).to eq("1234567890")
   end
 end
