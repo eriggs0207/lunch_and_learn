@@ -9,7 +9,11 @@ class CountryService
 
   def self.one_country(search_term)
     response = conn.get("/v3.1/name/#{search_term}")
-    parse(response)
+     info = parse(response)
+    details = info.first
+    x = details[:capitalInfo][:latlng]
+
+    binding.pry
   end
 
 private
