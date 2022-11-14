@@ -7,6 +7,11 @@ class CountryService
     random[:name][:common]
   end
 
+  def self.one_country(search_term)
+    response = conn.get("/v3.1/name/#{search_term}") 
+    parse(response)
+  end
+
 private
 
   def self.conn
