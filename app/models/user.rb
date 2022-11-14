@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   before_create :generate_api_key
 
+  has_many :favorites
+
   private
 
   def generate_api_key
