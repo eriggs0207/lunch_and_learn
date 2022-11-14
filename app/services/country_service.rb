@@ -11,9 +11,7 @@ class CountryService
     response = conn.get("/v3.1/name/#{search_term}")
      info = parse(response)
     details = info.first
-    x = details[:capitalInfo][:latlng]
-
-    binding.pry
+    details[:capitalInfo][:latlng]
   end
 
 private

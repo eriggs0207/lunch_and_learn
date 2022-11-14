@@ -3,11 +3,11 @@ require 'rails_helper'
 describe 'Tourist Sights Facade', :vcr do
   it 'find_attractions' do
     country = CountryService.one("France")
-    sights = TouristSightsFacade.find_attractions()
+    sights = TouristSightsService.find_attractions(country[1], country[0])
 
-    expect(recipe).to be_an(Array)
-    expect(recipe[0]).to be_a(Recipe)
-    expect(recipe[0].country).to eq("Thailand")
-    expect(random).to be_a(String)
+    expect(sights).to be_an(Array)
+    expect(sights[0]).to be_a(Recipe)
+    expect(sights[0].country).to eq("Thailand")
+    expect(country).to be_an(Array)
   end
 end

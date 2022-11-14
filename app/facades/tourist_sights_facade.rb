@@ -1,13 +1,11 @@
-require 'rails_helper'
+class RecipeFacade
 
-describe 'Tourist Sights Facade', :vcr do
-  it 'find_attractions' do
-    country = CountryService.one("France")
-    sights = TouristSightsFacade.find_attractions(country[1], country[0])
-    
-    expect(sights).to be_an(Array)
-    expect(sighhts[0]).to be_a(Recipe)
-    expect(sights[0].country).to eq("Thailand")
-    expect(random).to be_a(String)
+  def self.find_attractions(search_term)
+    country = CountryService.one_country(search_term)
+    sight_data = TouristSightsService.find_attractions(country[1], country[0])
+    sight[:data]
+    recipe_data[:hits].map do |data|
+      Recipe.new(data[:recipe], country)
+    end
   end
 end
