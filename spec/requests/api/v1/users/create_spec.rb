@@ -59,7 +59,7 @@ RSpec.describe 'User API | Create' do
         expect(response).to have_http_status(400)
 
         expect(parsed_response).to be_a(Hash)
-        expect(parsed_response[:errors][:email]).to eq([
+        expect(parsed_response[:errors][:name]).to eq([
             "can't be blank"
         ])
       end
@@ -69,7 +69,7 @@ RSpec.describe 'User API | Create' do
 
         user_params = {
           name: "Sloth",
-          email: "ahsloth@fratellirestaurant.com"
+          email: "johnnyfootball@pointbreak.com"
         }
         headers = {"CONTENT_TYPE" => "application/json"}
 
