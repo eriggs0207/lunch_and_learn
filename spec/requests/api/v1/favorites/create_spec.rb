@@ -22,7 +22,8 @@ RSpec.describe 'Favorites API | Create' do
         post '/api/v1/favorites', headers: headers, params: JSON.generate(fav_params)
         parsed_response = JSON.parse(response.body, symbolize_names: true)
         expect(response).to be_successful
-
+        expect(response).to have_http_status(201)
+        
         expect(parsed_response).to be_a(Hash)
         expect(parsed_response[:success][:message]).to eq("Favorite added successfully")
 
@@ -51,6 +52,6 @@ RSpec.describe 'Favorites API | Create' do
         expect(parsed_response[:errors][:message]).to eq("api key not vaild")
 
       end
-    end 
+    end
   end
 end
