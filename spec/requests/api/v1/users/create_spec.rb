@@ -6,8 +6,8 @@ RSpec.describe 'User API | Create' do
       it 'successfully create a user' do
 
         user_params = {
-          name: "Johnny Utah",
-          email: "johnnyfootball@pointbreak.com"
+          name: "Mama Fratelli",
+          email: "ahsloth@fratellirestaurant.com"
         }
         headers = {"CONTENT_TYPE" => "application/json"}
 
@@ -30,10 +30,27 @@ RSpec.describe 'User API | Create' do
       end
     end
     context 'sad paths' do
-      it 'returns a 400 error with missing params' do
+      it 'returns a 400 error with missing email' do
         user_params = {
 
-          name: "johnnyfootball@pointbreak.com"
+          name: "Fratelli Bros"
+        }
+        headers = {"CONTENT_TYPE" => "application/json"}
+
+        post '/api/v1/users', headers: headers, params: JSON.generate(user_params)
+        parsed_response = JSON.parse(response.body, symbolize_names: true)
+        expect(response).to have_http_status(400)
+
+        expect(parsed_response).to be_a(Hash)
+        expect(parsed_response[:errors][:email]).to eq([
+            "can't be blank"
+        ])
+      end
+
+      it 'returns a 400 error with missing name' do
+        user_params = {
+
+          email: "fratellibros@goonies.com"
         }
         headers = {"CONTENT_TYPE" => "application/json"}
 
@@ -51,8 +68,8 @@ RSpec.describe 'User API | Create' do
         user = create(:user, email: "johnnyfootball@pointbreak.com")
 
         user_params = {
-          name: "Johnny Manziel",
-          email: "johnnyfootball@pointbreak.com"
+          name: "Sloth",
+          email: "ahsloth@fratellirestaurant.com"
         }
         headers = {"CONTENT_TYPE" => "application/json"}
 
