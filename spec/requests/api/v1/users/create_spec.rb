@@ -33,7 +33,7 @@ RSpec.describe 'User API | Create' do
       it 'returns a 400 error with missing params' do
         user_params = {
 
-          email: "johnnyfootball@pointbreak.com"
+          name: "johnnyfootball@pointbreak.com"
         }
         headers = {"CONTENT_TYPE" => "application/json"}
 
@@ -42,7 +42,9 @@ RSpec.describe 'User API | Create' do
         expect(response).to have_http_status(400)
 
         expect(parsed_response).to be_a(Hash)
-        expect(parsed_response[:errors][:message]).to eq("All fields are required")
+        expect(parsed_response[:errors][:email]).to eq([
+            "can't be blank"
+        ])
       end
 
       it 'returns a 400 error when email already exists' do
@@ -59,7 +61,9 @@ RSpec.describe 'User API | Create' do
         expect(response).to have_http_status(400)
 
         expect(parsed_response).to be_a(Hash)
-        expect(parsed_response[:errors][:message]).to eq("Email already exists")
+        expect(parsed_response[:errors][:email]).to eq([
+            "has already been taken"
+        ])
       end
     end
   end
