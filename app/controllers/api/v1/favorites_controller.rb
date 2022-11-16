@@ -7,7 +7,7 @@ class Api::V1::FavoritesController < ApplicationController
       render json: {errors: { message: "api key not vaild"}}, status: 401
     else
       FavoriteSerializer.new(user.favorites.create(fav_params))
-      render json: {success: { message: "Favorite added successfully"}}, status: :created
+      render json: {success: { message: "Favorite added successfully"}}, status: 201 
     end
   end
 

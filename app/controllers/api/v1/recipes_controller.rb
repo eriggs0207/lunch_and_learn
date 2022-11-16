@@ -5,8 +5,6 @@ class Api::V1::RecipesController < ApplicationController
       render json: {data: []}
     else
       render json: RecipeSerializer.new(RecipeFacade.recipe_search(params[:country]))
-    # else
-    #   render json: {error: {message: ""}}, status: 400
     end
   end
 end

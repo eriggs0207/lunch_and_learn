@@ -10,4 +10,4 @@ class Resource
     @video = resource_hash[:video]
     @images = resource_hash[:images]
   end
-end
+end 
