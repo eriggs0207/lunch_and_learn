@@ -41,7 +41,7 @@ or
 
 <b>Example Input:</b>
 
-`GET http://localhost:3000/api/v1/recipes?country?"Malaysia"`
+`GET http://localhost:3000/api/v1/recipes?country=Malaysia`
 
 <b>Example Output:</b>
 
@@ -88,7 +88,7 @@ or
 
 <b>Example Input:</b>
 
-`GET http://localhost:3000/api/v1/learning_resources?country?"japan"`
+`GET http://localhost:3000/api/v1/learning_resources?country=japan`
 
 <b>Example Output:</b>
 
