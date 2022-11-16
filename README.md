@@ -4,19 +4,26 @@
 
 ## Table of Contents
 
-1. [Available API End Points](#all-available-end-points)
+1. [Learning Goals](#learning-goals)
+2. [Available API End Points](#all-available-end-points)
 - [Recipe End Point](#recipe-end-point)
 - [Learning Resources End Point](#learning-resources-end-point)
 - [User End Point](#user-end-point)
 - [Favorites End Points](#favorites-end-points)
     - [Create](#favorites-create)
     - [Index](#favorites-index)
-2. [Local Setup](#local-setup)
-3. [Versions](#versions)
-4. [Api Keys Needed](#api-keys-needed)
-5. [Contributors](#contributors)
+3. [Local Setup](#local-setup)
+4. [Versions](#versions)
+5. [Api Keys Needed](#api-keys-needed)
+6. [Contributors](#contributors)
 
+## Learning Goals
 
+- Expose an API that aggregates data from multiple external APIs
+- Expose an API that requires an authentication token
+- Expose an API for CRUD functionality
+- Determine completion criteria based on the needs of other developers
+- Test both API consumption and exposure, making use of at least one mocking tool (VCR, Webmock, etc).
 
 ## All Available End Points:
 
@@ -273,9 +280,9 @@ or
 
 ## Api Keys Needed
 
-Unsplash - https://unsplash.com/documentation
-YouTube - https://developers.google.com/youtube/v3/getting-started
-EDAMAM - https://developer.edamam.com/edamam-recipe-api
+- Unsplash - https://unsplash.com/documentation
+- YouTube - https://developers.google.com/youtube/v3/getting-started
+- EDAMAM - https://developer.edamam.com/edamam-recipe-api
 
 ## Contributors
 
