@@ -4,25 +4,19 @@
 
 ## Table of Contents
 
-1. [Architecture and Design](#architecture-and-design)
-2. [Available API End Points](#all-available-end-points)
+1. [Available API End Points](#all-available-end-points)
 - [Recipe End Point](#recipe-end-point)
 - [Learning Resources End Point](#learning-resources-end-point)
 - [User End Point](#user-end-point)
 - [Favorites End Points](#favorites-end-points)
     - [Create](#favorites-create)
     - [Index](#favorites-index)
-3. [Local Setup](#local-setup)
-4. [Versions](#versions)
-5. [Api Keys Needed](#api-keys-needed)
-6. [Contributors](#contributors)
+2. [Local Setup](#local-setup)
+3. [Versions](#versions)
+4. [Api Keys Needed](#api-keys-needed)
+5. [Contributors](#contributors)
 
 
-## Architecture and Design
-
-<p align="center">
-  <img src="https://github.com/TripWeather/.github/blob/main/profile/assets/BE_DB.png?raw=true" />
-</p>
 
 ## All Available End Points:
 
@@ -276,6 +270,12 @@ or
 - Ruby 2.7.2
 
 - Rails 6.1.7
+
+## Api Keys Needed
+
+Unsplash - https://unsplash.com/documentation
+YouTube - https://developers.google.com/youtube/v3/getting-started
+EDAMAM - https://developer.edamam.com/edamam-recipe-api
 
 ## Contributors
 
