@@ -30,4 +30,13 @@ RSpec.describe Resource do
     expect(@resource.video).to have_key(:title)
     expect(@resource.video).to have_key(:youtube_video_id)
   end
+
+  it 'can verify media is present' do
+
+    media = nil
+    media1 = "videos"
+
+    expect(@resource.verify_media(media)).to eq([])
+    expect(@resource.verify_media(media1)).to eq("videos")
+  end 
 end
